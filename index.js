@@ -7,7 +7,8 @@ const app = express();
 
 // Atribuir as rotas
 consign()
-    .include("models") // Primeiro ele vai carregar a model
+    .include("db.js")
+    .then("models")
     .then("libs/middlewares.js")
     .then("routes") // Depois chama as rotas
     .then("libs/boot.js")
